@@ -35,9 +35,23 @@ public class WordleLite {
     
     // Get and validate the player's guess
     public static String getPlayerGuess() {
-       
+        while (true) {
+            System.out.println("Enter a four letter word guess:");
+       String guess = scanner.nextLine();
+        // Check guess is 4 digits and it matches a-z, so that it must be letters
+       if (guess.length() == 4 && guess.matches("[a-zA-z]+")) {
+        return guess.toLowerCase();
+
+       } else {
+        System.out.println("Invalid try again");
         
-        return "";
+       }
+    }
+       
+
+
+        
+        
     }
     
     // Compare the guess with the secret word and provide feedback
