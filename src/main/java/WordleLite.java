@@ -44,6 +44,7 @@ public class WordleLite {
 
        } else {
         System.out.println("Invalid try again");
+<<<<<<< Updated upstream
         
        }
     }
@@ -52,7 +53,12 @@ public class WordleLite {
 
         
         
+=======
+        
+       }
+>>>>>>> Stashed changes
     }
+}
     
     // Compare the guess with the secret word and provide feedback
     public static String provideFeedback(String guess, String secretWord) {
