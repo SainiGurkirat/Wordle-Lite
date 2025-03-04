@@ -17,7 +17,7 @@ public class WordleLite {
         System.out.println("- means letter not in the word");
         
         playGame(secretWord);
-        
+    
         scanner.close();
     }
     
@@ -42,7 +42,42 @@ public class WordleLite {
     
     // Compare the guess with the secret word and provide feedback
     public static String provideFeedback(String guess, String secretWord) {
-       return "";
+
+        if(guess.equals(secretWord)){
+            return "****";
+        }
+        
+        String feedbackString = "";
+        char[] charGuessArray = guess.toCharArray();
+ 
+
+        char[] charSecretWordArray = secretWord.toCharArray();
+
+
+        int i = 0;
+        String pos = "";
+        for(char c: charGuessArray){
+
+
+            if(c == charSecretWordArray[i]){
+                feedbackString += "*";
+                pos = "*";
+            }else{
+                for(char g: charSecretWordArray){
+                    if (c == g) {
+                        pos = "+";
+                    }
+                }
+            }
+            if(pos.equals("+")){
+                feedbackString += "+";
+            }else if(pos.equals("")){
+                feedbackString += "-";
+            }
+            i++;
+            
+        }
+        return feedbackString;
     }
     
     // Display the guess and feedback
