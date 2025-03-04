@@ -57,7 +57,7 @@ public class WordleLite {
         int i = 0;
         String pos = "";
         for(char c: charGuessArray){
-
+            pos = "";
 
             if(c == charSecretWordArray[i]){
                 feedbackString += "*";
